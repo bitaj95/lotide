@@ -7,7 +7,7 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-//Bring over eqArrays function: use when need to check if two arrays equal
+//Bring over eqArrays function: checks if two arrays equal
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
@@ -21,7 +21,7 @@ const eqArrays = function(array1, array2) {
   return true;
 }
 
-//MAIN function
+//Bring over: checks if two objects are equal
 const eqObjects = function(object1, object2) {
   
   let keysObj1 = Object.keys(object1);
@@ -45,16 +45,17 @@ const eqObjects = function(object1, object2) {
 };
 
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true); // => true
-
-const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc), false); // => false 
+// FUNCTION IMPLEMENTATION
+const assertObjectsEqual = function(actual, expected) {
+  let checker = eqObjects(actual, expected);
+  if (checker) {
+    console.log(`✅The two ojects are equal. ${actual} === ${expected}`);
+  } else {
+    console.log(`🚩The two objects are not equal. ${actual} !== ${expected}`);
+  }
+};
 
 const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true); // => true
+const dc = { d: ["2", 3], c: "5" };
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); // => false 
+assertObjectsEqual(cd,dc);
