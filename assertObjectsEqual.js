@@ -47,15 +47,16 @@ const eqObjects = function(object1, object2) {
 
 // FUNCTION IMPLEMENTATION
 const assertObjectsEqual = function(actual, expected) {
+  const inspect = require('util').inspect;
   let checker = eqObjects(actual, expected);
   if (checker) {
-    console.log(`✅The two ojects are equal. ${actual} === ${expected}`);
+    console.log(`✅The two ojects are equal. ${inspect(actual)} === ${inspect(expected)}`);
   } else {
-    console.log(`🚩The two objects are not equal. ${actual} !== ${expected}`);
+    console.log(`🚩The two objects are not equal. ${inspect(actual)} !== ${inspect(expected)}`);
   }
 };
 
 const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "5" };
+const dc = { d: ["2", 3], c: "1" };
 
 assertObjectsEqual(cd,dc);
