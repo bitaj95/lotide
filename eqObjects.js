@@ -38,13 +38,27 @@ const eqObjects = function(object1, object2) {
         return false;
       };
     } else if (object1[key] !== object2[key]) {
-      return false;
+      // if value of key not array, check to see if they are objects
+        if (typeof object1[key] === "object" && typeof object2[key] === "object") {
+          //check if two objects are the same, if not return false
+          if (!eqObjects(object1[key], object2[key])) {
+            return false;
+          } else {
+            continue;
+          }
+        }
+        //keys are not array or objects, so check if they are equal
+        return false;
     };
   };
   return true;
 };
 
 
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true) 
+assertEqual(eqObjects( {a: 2, b: { z: 1 }}, { a: { z: 1 }, b: 2 }), false) 
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false) 
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
 assertEqual(eqObjects(ab, ba), true); // => true

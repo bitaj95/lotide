@@ -38,12 +38,21 @@ const eqObjects = function(object1, object2) {
         return false;
       };
     } else if (object1[key] !== object2[key]) {
-      return false;
+      // if value of key not array, check to see if they are objects
+        if (typeof object1[key] === "object" && typeof object2[key] === "object") {
+          //check if two objects are the same, if not return false
+          if (!eqObjects(object1[key], object2[key])) {
+            return false;
+          } else {
+            continue;
+          }
+        }
+        //keys are not array or objects, so check if they are equal
+        return false;
     };
   };
   return true;
 };
-
 
 // FUNCTION IMPLEMENTATION
 const assertObjectsEqual = function(actual, expected) {
