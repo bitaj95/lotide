@@ -44,4 +44,6 @@ const middle = function(array) {
 
 //Test
 
-assertArraysEqual(middle([1,2,3,4,5,6]),[3,4]);
+//test code exported to middleTest.js: assertArraysEqual(middle([1,2,3,4,5,6]),[3,4]);
+
+module.exports = middle;
