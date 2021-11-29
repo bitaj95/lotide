@@ -1,5 +1,5 @@
-//MAIN FUNCTION
-const eqArrays = function(array1, array2) {
+const eqArrays = require('./eqArrays');
+/* const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
   }
@@ -19,7 +19,7 @@ const eqArrays = function(array1, array2) {
     }
   }
   return true;
-}
+} */
 
 
 const assertArraysEqual = function(array1, array2) {
@@ -31,10 +31,9 @@ const assertArraysEqual = function(array1, array2) {
   }
 };
 
+module.exports = assertArraysEqual;
 
-//test eqArrays through assertEqual function to make sure it is working properly
-/* assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3])); 
-assertArraysEqual(eqArrays([1, 2, 3], [3, 2, 1])); 
- */
-assertArraysEqual([2,2,2],[2,3,2]);
-assertArraysEqual([2,2,2],[2,2,2]);
+
+//transferred to assertArraysEqualTest.js
+/* assertArraysEqual([2,2,2],[2,3,2]);
+assertArraysEqual([2,2,2],[2,2,2]); */
