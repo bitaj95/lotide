@@ -45,3 +45,5 @@ console.log(results1);
 //TEST using assertArraysEqual function
 const fruits = ["pomegrante", "orange", "grapes", "starfruit", "mango", "avocado"];
 assertArraysEqual(map(fruits, fruit => fruit.length), [10,6,6,9,5,7]);
+
+module.exports = map;

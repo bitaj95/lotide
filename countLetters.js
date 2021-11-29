@@ -23,3 +23,5 @@ const countLetters = function(string) {
 //Tests
 const result1 = countLetters("Banana");
 assertEqual(result1["B"],1);
+
+module.exports = countLetters;

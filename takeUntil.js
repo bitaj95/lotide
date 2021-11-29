@@ -49,3 +49,5 @@ console.log(results2);
 
 //TEST with assertArraysEqual
 assertArraysEqual(takeUntil(data3, x => x === '!'), ["I", "want", "to", "go", "to", "sleep"]);
+
+module.exports = takeUntil;
