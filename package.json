@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@bita-janzadeh/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A student's remake of the lodash JS library ",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/bitaj95/lotide.git"
   },
-  "author": "",
+  "author": "Bita Janzadeh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bitaj95/lotide/issues"
