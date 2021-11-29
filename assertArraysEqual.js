@@ -34,6 +34,5 @@ const assertArraysEqual = function(array1, array2) {
 module.exports = assertArraysEqual;
 
 
-//transferred to assertArraysEqualTest.js
 /* assertArraysEqual([2,2,2],[2,3,2]);
 assertArraysEqual([2,2,2],[2,2,2]); */
